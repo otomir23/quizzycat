@@ -10,11 +10,11 @@ const Layout = ({children, title}: LayoutProps) => {
     return (
         <div className="flex flex-col min-h-screen items-center">
             <Head>
-                <title>{title} | quizycat</title>
+                <title>{`${title} | quizzycat`}</title>
             </Head>
             <header className="my-12">
                 <Link href="/">
-                    <a className="font-bold text-4xl">quizycat</a>
+                    <a className="font-bold text-4xl">quizzycat</a>
                 </Link>
             </header>
             <main className="min-h-full w-full flex flex-col items-center">{children}</main>
