@@ -35,7 +35,7 @@ const QuizResults: NextPage = () => {
                                 </div>
                             ))}
                             {answer.your_answer.length === 0 && (
-                                <div className="text-sm text-gray-800">You didn't answer this question</div>
+                                <div className="text-sm text-gray-800">You didn&apos;t answer this question</div>
                             )}
                         </div>
                     ))}
