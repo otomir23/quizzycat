@@ -3,7 +3,6 @@ import {NextPage} from "next";
 import {useEffect, useState} from "react";
 import {Quiz, QuizResults} from "../../../types";
 import {useRouter} from "next/router";
-import {btoa} from "buffer";
 
 const Question = (props: {
                       question: string,
@@ -167,7 +166,7 @@ const Quiz: NextPage = () => {
                                                     }).then(res => {
                                                         if (res.status === 200) {
                                                             res.json().then((results: QuizResults) => {
-                                                                router.push(`/quiz/${quiz.slug}/results?results=${Buffer.from(JSON.stringify(results)).toString('base64')}`);
+                                                                router.push(`/quiz/${quiz.slug}/results?results=${Buffer.from(encodeURIComponent(JSON.stringify(results))).toString('base64')}`);
                                                             })
                                                         }
                                                     })

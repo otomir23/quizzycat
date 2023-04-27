@@ -12,7 +12,7 @@ const QuizResults: NextPage = () => {
         if (!router || !router.query || !router.query.results) return;
 
         const {results} = router.query;
-        const jsonString = Buffer.from(String(results), 'base64').toString('utf-8');
+        const jsonString = decodeURIComponent(Buffer.from(String(results), 'base64').toString());
         const quizResults = JSON.parse(jsonString);
         setResults(quizResults);
     }, [router]);
